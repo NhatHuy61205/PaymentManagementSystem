@@ -8,7 +8,7 @@ start_time = time.time()
 # c: xác định quyền truy cập
 def main_menu(a,b,c):
     mycon = conn.connect(host="127.0.0.1", user="huyy", password="Huybui1206",database="cafe_payment_system")
-    login = 0
+    login = 0 
     
 # Kiểm tra thông tin đăng nhập
     while login!=1:
@@ -51,7 +51,7 @@ def main_menu(a,b,c):
                         end_time = time.time()
                         print("Successfully Logged Out. Your active time was ", end_time - start_time, "seconds")
                         exit(0)
-                    else:
+                    else: 
                         
                         
                     
