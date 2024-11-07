@@ -1,5 +1,6 @@
 import mysql.connector as conn 
 import time
+from login import Usern, Userp
 
 
 start_time = time.time()
@@ -84,7 +85,7 @@ def main_menu(a,b,c):
                 login = 1
                 do_again = input("Go Back to Main Menu? (y -> Yes, n -> No and Logout) ")
                 if do_again in ['y', 'yes', 'Y', 'YES']:
-                    Main_menu(a, b, c)
+                    main_menu(a, b, c)
                 else:
                     end_time = time.time()
                     print("Process Successfully Done. Logged Out")
@@ -94,7 +95,7 @@ def main_menu(a,b,c):
     if log_ag == 'y' or log_ag == 'Y':
         user_id = Usern()
         user_pass = Userp()
-        Main_menu(user_id, user_pass, c)
+        main_menu(user_id, user_pass, c)
     else:
         end_time = time.time()
         print("Successfully Logged Out. Your active time was ", end_time - start_time, "seconds")
