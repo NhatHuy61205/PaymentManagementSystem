@@ -52,7 +52,56 @@ def main_menu(a,b,c):
                         print("Successfully Logged Out. Your active time was ", end_time - start_time, "seconds")
                         exit(0)
                     else: 
-                        
+                        print("Wrong Input")
+                    login = 1
+                    again = input("Go Back to Main Menu? (y -> Yes, n -> No and Logout) ")
+                    # Goi lam menu
+                    if again in ['y', 'yes', 'Y', 'YES']:
+                        main_menu(a, b, c)
+                    else:
+                        end_time = time.time()
+                        print("Process Successfully Done. Logged Out")
+                        print("Your active time was ", end_time - start_time, "seconds")
+                        exit(0)
+            else:
+                # Khach hang dang nhap
+                print("     Successfully Logged In.")
+                print("    1-> Order \n" +
+                      "    2-> Cancel an Order \n" +
+                      "    3-> Add Drinks \n" +
+                      "    4-> View Bill \n" +
+                      "    5-> Payment \n" +
+                      "    6-> Exit")
+                ch2 = int(input("Enter your choice from (1 to 6): "))
+                if ch2==1:
+                    # goi ham orders.
+                elif ch2 == 6:
+                    end_time = time.time()
+                    print("Successfully Logged Out. Your active time was ", end_time - start_time, "seconds")
+                    exit(0)
+                else:
+                    print("Wrong Input.")
+                login = 1
+                do_again = input("Go Back to Main Menu? (y -> Yes, n -> No and Logout) ")
+                if do_again in ['y', 'yes', 'Y', 'YES']:
+                    Main_menu(a, b, c)
+                else:
+                    end_time = time.time()
+                    print("Process Successfully Done. Logged Out")
+                    print("Your active time was ", end_time - start_time, "seconds")
+                    exit(0)
+    log_ag = str(input("Enter login details again? (y -> Yes, n -> No and exit): "))
+    if log_ag == 'y' or log_ag == 'Y':
+        user_id = Usern()
+        user_pass = Userp()
+        Main_menu(user_id, user_pass, c)
+    else:
+        end_time = time.time()
+        print("Successfully Logged Out. Your active time was ", end_time - start_time, "seconds")
+        exit(0)
+                
+            
+            
                         
                     
                     
