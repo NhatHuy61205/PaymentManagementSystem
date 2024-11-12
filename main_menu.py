@@ -1,7 +1,7 @@
 import mysql.connector as conn 
 import time
 from login import Usern, Userp
-
+import drinks
 
 start_time = time.time()
 # a: user 
@@ -41,31 +41,33 @@ def main_menu(a,b,c):
                       "     13 -> View User Details" +
                       "     14 -> Exit")
                 ch = int(input("Enter your choice from (1 to 14): "))
-                    if ch ==1:
-                #     ## Gọi hàm thêm nước vd: drinks.Add_drink()
-                # elif ch ==2:
-                #     ## Gọi hàm cập nhật 
-                # elif ch==3:
-                #     ## Goi ham xoa nuoc
-                # ....
-                    elif ch==14:
-                        end_time = time.time()
-                        print("Successfully Logged Out. Your active time was ", end_time - start_time, "seconds")
-                        exit(0)
-                    else: 
-                        print("Wrong Input")
-                    login = 1
-                    again = input("Go Back to Main Menu? (y -> Yes, n -> No and Logout) ")
+                if ch ==1:
+                    drinks.Add_drink()
+                elif ch==2:
+                    drinks.Update_drink()
+                elif ch==3:
+                    drinks.Delete_drink()
+                elif ch==4:
+                    drinks.View_details()
+                elif ch==5:
+                    drinks.View_all()
+                elif ch==14:
+                    end_time = time.time()
+                    print("Successfully Logged Out. Your active time was ", end_time - start_time, "seconds")
+                    exit(0)
+                else: 
+                    print("Wrong Input")
+                login = 1
+                again = input("Go Back to Main Menu? (y -> Yes, n -> No and Logout) ")
                     # Goi lam menu
-                    if again in ['y', 'yes', 'Y', 'YES']:
-                        main_menu(a, b, c)
-                    else:
-                        end_time = time.time()
-                        print("Process Successfully Done. Logged Out")
-                        print("Your active time was ", end_time - start_time, "seconds")
-                        exit(0)
+                if again in ['y', 'yes', 'Y', 'YES']:
+                    main_menu(a, b, c)
+                else:
+                    end_time = time.time()
+                    print("Process Successfully Done. Logged Out")
+                    print("Your active time was ", end_time - start_time, "seconds")
+                    exit(0)
             else:
-                # Khach hang dang nhap
                 print("     Successfully Logged In.")
                 print("    1-> Order \n" +
                       "    2-> Cancel an Order \n" +
