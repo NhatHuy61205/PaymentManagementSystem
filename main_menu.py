@@ -2,6 +2,7 @@ import mysql.connector as conn
 import time
 from login import Usern, Userp
 import drinks
+import account
 
 start_time = time.time()
 # a: user 
@@ -20,7 +21,7 @@ def main_menu(a,b,c):
             print("Wrong Credentials!!!")
             break
         else:
-            if data[0]==1:
+            if data[2]=='admin':                
                 while c!=1:    #Menu cho Quản trị viên 
                     print("    Successfully Logged In. \n"
                           "    You are Administrator :)")

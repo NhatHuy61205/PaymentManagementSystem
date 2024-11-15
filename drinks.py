@@ -45,7 +45,7 @@ def View_all():
         print("No drinks found in the database.")
         return
     hearder = ["ID", "Name", "Price", "Volume", "Temperature"]
-    table = tabulate(drinks, hearder, tablefmt="fancy_grid")
+    table = tabulate(drinks, hearder=hearder, tablefmt="fancy_grid",stralign='center', colalign=("center", "center", "center"))
     
     print(table)
     mycon1.close()
