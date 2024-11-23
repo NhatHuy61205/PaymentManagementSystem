@@ -20,5 +20,5 @@
   - Vẽ biểu đồ doanh thu tháng
 
 * Công cụ :
-  - Python, HTML, C++, CSS, Javascrip.
+  - Python, MySQL
 
